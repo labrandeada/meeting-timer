@@ -16,6 +16,527 @@
     color: #1a1a1a;
   }
 
+  .page-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+  .top-banner {
+    width: 100%;
+    min-height: 90px;
+    background: #e2e2e6;
+    border: 1px dashed #b5b5bd;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  .content-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .side-banner {
+    width: 160px;
+    min-height: 600px;
+    background: #e2e2e6;
+    border: 1px dashed #b5b5bd;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 13px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 16px;
+    writing-mode: vertical-rl;
+  }
+  .main-tool {
+    flex: 1;
+    min-width: 0;
+  }
+  @media (max-width: 900px) {
+    .side-banner { display: none; }
+  }
+
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #666; font-size: 13px; margin-bottom: 20px; }
+  .card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  label { display: block; font-size: 12px; font-weight: 600; color: #444; margin-bottom: 4px; }
+  input[type=text], input[type=number], input[type=time], textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-family: inherit;
+  }
+  textarea { resize: vertical; }
+  .paste-hint { font-size: 12px; color: #888; margin: -6px 0 10px; }
+  .row { display: flex; gap: 10px; align-items: flex-end; }
+  .row > div { flex: 1; }
+  .agenda-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .agenda-item input[type=text] { flex: 3; margin-bottom: 0; }
+  .agenda-item input[type=number] { flex: 1; margin-bottom: 0; }
+  button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .btn-primary { background: #d97757; color: #fff; }
+  .btn-secondary { background: #eee; color: #1a1a1a; }
+  .btn-danger { background: #fde8e8; color: #c0392b; }
+  .btn-small { padding: 6px 10px; font-size: 13px; }
+  .btn-add { background: #eef4ff; color: #2255aa; width: 100%; margin-top: 4px; }
+  #setup-actions, #live-actions { display: flex; gap: 10px; margin-top: 10px; }
+  #liveView { display: none; }
+  .timer-box {
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 14px;
+    transition: background 0.3s;
+  }
+  .timer-label { font-size: 13px; font-weight: 600; opacity: 0.8; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .timer-presenter { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+  .timer-clock { font-size: 56px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1; }
+  .timer-sub { font-size: 13px; margin-top: 8px; opacity: 0.85; }
+  .green { background: #e6f7ec; color: #1a7a3c; }
+  .yellow { background: #fff6da; color: #8a6d00; }
+  .red { background: #fdeaea; color: #b0261e; }
+  .delay-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 14px;
+  }
+  .delay-behind { background: #fdeaea; color: #b0261e; }
+  .delay-ahead { background: #e6f7ec; color: #1a7a3c; }
+  .delay-ontime { background: #eef0f2; color: #444; }
+  .agenda-list { margin-top: 6px; }
+  .agenda-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    background: #fafafa;
+    border: 1px solid #eee;
+    cursor: pointer;
+  }
+  .agenda-row.current { background: #fff1ea; border-color: #d97757; }
+  .agenda-row.done { opacity: 0.55; }
+  .agenda-row .name { font-weight: 600; font-size: 14px; }
+  .agenda-row .meta { font-size: 12px; color: #777; }
+  .status-icon { margin-right: 8px; font-size: 14px; }
+  #resetLink { text-align: center; margin-top: 10px; }
+  #resetLink a { font-size: 12px; color: #888; cursor: pointer; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <div class="top-banner">Espacio banner 728x90 — aquí va tu código de AdSense</div>
+
+  <div class="content-row">
+
+    <div class="side-banner">Banner lateral</div>
+
+    <div class="main-tool">
+      <h1>Control de tiempo de reunión</h1>
+      <div class="subtitle">Arma la agenda, inicia la reunión y ve el avance en vivo.</div>
+
+      <p style="font-size:13px; color:#555; max-width:640px; margin:0 0 20px; line-height:1.5;">
+        Herramienta gratuita y sin registro para controlar el tiempo en reuniones con varios puntos de agenda.
+        Escribe o pega los bloques de tu agenda con su duración en minutos, pulsa "Iniciar reunión" y sigue
+        un contador en vivo por bloque, con aviso cuando te quedas sin tiempo y una estimación de retraso
+        proyectado para toda la reunión. Los datos que introduces se guardan solo en tu propio navegador,
+        nunca se envían a ningún servidor.
+      </p>
+
+      <div id="setupView" class="card">
+        <label>Nombre de la reunión</label>
+        <input type="text" id="meetingName" placeholder="Ej. Kickoff Q3">
+
+        <label>Hora de inicio planeada</label>
+        <input type="time" id="meetingStartTime">
+
+        <label style="margin-top:10px;">Pegar agenda (opcional, una línea por bloque)</label>
+        <textarea id="pasteAgenda" rows="4" placeholder="09:00-09:30 Presentación
+09:30-11:30 Plan de marketing
+
+o bien:
+
+Presentación, 30
+Plan de marketing, 120"></textarea>
+        <div class="paste-hint">Acepta "09:00-09:30 Nombre" o "Nombre, minutos" — una línea por bloque.</div>
+        <button class="btn-secondary btn-small" onclick="parsePastedAgenda()" style="margin-bottom:10px;">Generar bloques desde el texto</button>
+
+        <label style="margin-top:10px;">Agenda (tema / presentador y duración en minutos)</label>
+        <div id="agendaItems"></div>
+        <button class="btn-add" onclick="addAgendaRow()">+ Agregar bloque</button>
+
+        <div id="setup-actions">
+          <button class="btn-primary" onclick="startMeeting()">Iniciar reunión</button>
+        </div>
+      </div>
+
+      <div id="liveView">
+        <div class="card">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <strong id="liveMeetingName"></strong>
+              <div class="subtitle" style="margin:0;">Hora planeada de inicio: <span id="liveStartTime"></span></div>
+            </div>
+            <button class="btn-secondary btn-small" onclick="endMeeting()">Terminar / editar agenda</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="timer-box green" id="timerBox">
+            <div class="timer-label">Presentador actual</div>
+            <div class="timer-presenter" id="currentPresenter">-</div>
+            <div class="timer-clock" id="timerClock">00:00</div>
+            <div class="timer-sub" id="timerSub"></div>
+            <div id="delayBadge" class="delay-badge delay-ontime">Vas a tiempo</div>
+          </div>
+          <div id="live-actions">
+            <button class="btn-secondary" onclick="prevSegment()">&larr; Anterior</button>
+            <button class="btn-primary" onclick="nextSegment()">Siguiente &rarr;</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="subtitle" style="margin-bottom:10px;">Toca cualquier bloque para marcarlo como el actual (por si vas por otra parte de la agenda).</div>
+          <div class="agenda-list" id="agendaList"></div>
+        </div>
+
+        <div id="resetLink"><a onclick="resetAll()">Reiniciar todo</a></div>
+      </div>
+    </div>
+
+    <div class="side-banner">Banner lateral</div>
+
+  </div>
+</div>
+
+<footer style="max-width:1200px; margin:24px auto 0; padding:0 16px 24px; text-align:center; font-size:12px; color:#999;">
+  <a href="privacy-policy.html" style="color:#999;">Política de privacidad</a>
+</footer>
+
+<script>
+let state = {
+  meetingName: '',
+  plannedStartMinutes: 0,
+  segments: [],
+  meetingStartTs: null,
+  currentIndex: 0,
+  actualStart: [],
+  finished: []
+};
+
+const STORAGE_KEY = 'meetingTimerState_v1';
+
+function addAgendaRow(name, duration) {
+  const container = document.getElementById('agendaItems');
+  const row = document.createElement('div');
+  row.className = 'agenda-item';
+  row.innerHTML = `
+    <input type="text" placeholder="Tema o presentador" value="${name || ''}">
+    <input type="number" min="1" placeholder="min" value="${duration || ''}">
+    <button class="btn-danger btn-small" onclick="this.parentElement.remove()">✕</button>
+  `;
+  container.appendChild(row);
+}
+
+function loadSetupDefaults() {
+  const saved = localStorage.getItem(STORAGE_KEY + '_template');
+  if (saved) {
+    const data = JSON.parse(saved);
+    document.getElementById('meetingName').value = data.meetingName || '';
+    document.getElementById('meetingStartTime').value = data.startTime || '';
+    (data.segments || []).forEach(s => addAgendaRow(s.name, s.duration));
+  }
+  if (document.getElementById('agendaItems').children.length === 0) {
+    addAgendaRow('', '');
+    addAgendaRow('', '');
+    addAgendaRow('', '');
+  }
+}
+
+function parsePastedAgenda() {
+  const text = document.getElementById('pasteAgenda').value;
+  const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
+  if (lines.length === 0) {
+    alert('Pega primero el texto de la agenda, una línea por bloque.');
+    return;
+  }
+
+  const parsed = [];
+  let earliest = null;
+
+  lines.forEach(line => {
+    let m = line.match(/^(\d{1,2})[:.](\d{2})\s*(?:-|–|a|to|hasta)\s*(\d{1,2})[:.](\d{2})\s*[-:|]?\s*(.*)$/i);
+    if (m) {
+      const startTotal = parseInt(m[1]) * 60 + parseInt(m[2]);
+      const endTotal = parseInt(m[3]) * 60 + parseInt(m[4]);
+      const duration = endTotal - startTotal;
+      const name = m[5].trim() || 'Bloque';
+      if (duration > 0) {
+        parsed.push({ name, duration });
+        if (earliest === null || startTotal < earliest.total) {
+          earliest = { total: startTotal, label: String(m[1]).padStart(2,'0') + ':' + String(m[2]).padStart(2,'0') };
+        }
+        return;
+      }
+    }
+
+    m = line.match(/^(.*?)[\s,;:\-|]+(\d+)\s*(?:min(?:utos)?)?\.?$/i);
+    if (m && m[1].trim()) {
+      parsed.push({ name: m[1].trim(), duration: parseInt(m[2]) });
+      return;
+    }
+
+    const parts = line.split('\t').map(p => p.trim()).filter(Boolean);
+    if (parts.length >= 2) {
+      const num = parseFloat(parts[parts.length - 1]);
+      if (!isNaN(num)) {
+        parsed.push({ name: parts.slice(0, -1).join(' ').trim(), duration: num });
+      }
+    }
+  });
+
+  if (parsed.length === 0) {
+    alert('No pude leer bloques de ese texto. Usa una línea por bloque, con formato "Nombre, 30" o "09:00-09:30 Nombre".');
+    return;
+  }
+
+  document.getElementById('agendaItems').innerHTML = '';
+  parsed.forEach(p => addAgendaRow(p.name, p.duration));
+  if (earliest) document.getElementById('meetingStartTime').value = earliest.label;
+}
+
+function collectAgendaFromForm() {
+  const rows = document.querySelectorAll('#agendaItems .agenda-item');
+  const segments = [];
+  rows.forEach(r => {
+    const inputs = r.querySelectorAll('input');
+    const name = inputs[0].value.trim();
+    const duration = parseFloat(inputs[1].value);
+    if (name && duration > 0) segments.push({ name, duration });
+  });
+  return segments;
+}
+
+function startMeeting() {
+  const segments = collectAgendaFromForm();
+  if (segments.length === 0) {
+    alert('Agrega al menos un bloque con nombre y duración.');
+    return;
+  }
+  const meetingName = document.getElementById('meetingName').value.trim() || 'Reunión';
+  const startTime = document.getElementById('meetingStartTime').value;
+
+  localStorage.setItem(STORAGE_KEY + '_template', JSON.stringify({ meetingName, startTime, segments }));
+
+  state.meetingName = meetingName;
+  state.segments = segments;
+  state.meetingStartTs = Date.now();
+  state.currentIndex = 0;
+  state.actualStart = segments.map(() => null);
+  state.finished = segments.map(() => false);
+  state.actualStart[0] = state.meetingStartTs;
+  state.startTimeLabel = startTime || new Date().toTimeString().slice(0,5);
+
+  saveState();
+  document.getElementById('setupView').style.display = 'none';
+  document.getElementById('liveView').style.display = 'block';
+  document.getElementById('liveMeetingName').textContent = state.meetingName;
+  document.getElementById('liveStartTime').textContent = state.startTimeLabel;
+  renderAgendaList();
+  tick();
+  if (window._timerInterval) clearInterval(window._timerInterval);
+  window._timerInterval = setInterval(tick, 1000);
+}
+
+function saveState() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function fmt(seconds) {
+  const sign = seconds < 0 ? '-' : '';
+  seconds = Math.abs(Math.round(seconds));
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return sign + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+}
+
+function setCurrentSegment(index) {
+  if (index < 0 || index >= state.segments.length) return;
+  for (let i = 0; i < index; i++) state.finished[i] = true;
+  for (let i = index; i < state.finished.length; i++) state.finished[i] = false;
+  state.currentIndex = index;
+  if (!state.actualStart[index]) state.actualStart[index] = Date.now();
+  saveState();
+  renderAgendaList();
+  tick();
+}
+
+function nextSegment() {
+  if (state.currentIndex < state.segments.length - 1) {
+    setCurrentSegment(state.currentIndex + 1);
+  } else {
+    state.finished[state.currentIndex] = true;
+    saveState();
+    renderAgendaList();
+    tick();
+  }
+}
+
+function prevSegment() {
+  if (state.currentIndex > 0) setCurrentSegment(state.currentIndex - 1);
+}
+
+function tick() {
+  const now = Date.now();
+  const idx = state.currentIndex;
+  const seg = state.segments[idx];
+  if (!seg) return;
+
+  const startedAt = state.actualStart[idx] || now;
+  const elapsedSec = (now - startedAt) / 1000;
+  const remainingSec = seg.duration * 60 - elapsedSec;
+
+  document.getElementById('currentPresenter').textContent = seg.name;
+  document.getElementById('timerClock').textContent = fmt(remainingSec);
+
+  const box = document.getElementById('timerBox');
+  const sub = document.getElementById('timerSub');
+  box.classList.remove('green','yellow','red');
+  if (remainingSec < 0) {
+    box.classList.add('red');
+    sub.textContent = 'Tiempo excedido - avisale que cierre esta parte';
+  } else if (remainingSec <= 5*60) {
+    box.classList.add('yellow');
+    sub.textContent = 'Quedan ' + Math.ceil(remainingSec/60) + ' min - avisale pronto';
+  } else if (remainingSec <= 10*60) {
+    box.classList.add('yellow');
+    sub.textContent = 'Quedan ' + Math.ceil(remainingSec/60) + ' min';
+  } else {
+    box.classList.add('green');
+    sub.textContent = 'Duracion planeada: ' + seg.duration + ' min';
+  }
+
+  const plannedTotal = state.segments.reduce(function(a,s){return a + s.duration;}, 0);
+  const remainingFutureMin = state.segments.slice(idx+1).reduce(function(a,s){return a + s.duration;}, 0);
+  const elapsedSinceStartMin = (now - state.meetingStartTs) / 60000;
+  const projectedEndMin = elapsedSinceStartMin + Math.max(remainingSec/60, 0) + remainingFutureMin;
+  const delayMin = Math.round(projectedEndMin - plannedTotal);
+
+  const badge = document.getElementById('delayBadge');
+  badge.classList.remove('delay-behind','delay-ahead','delay-ontime');
+  if (delayMin > 0) {
+    badge.classList.add('delay-behind');
+    badge.textContent = 'Vas ' + delayMin + ' min retrasado (proyectado)';
+  } else if (delayMin < 0) {
+    badge.classList.add('delay-ahead');
+    badge.textContent = 'Vas ' + Math.abs(delayMin) + ' min adelantado';
+  } else {
+    badge.classList.add('delay-ontime');
+    badge.textContent = 'Vas a tiempo';
+  }
+}
+
+function renderAgendaList() {
+  const container = document.getElementById('agendaList');
+  container.innerHTML = '';
+  let cumStart = 0;
+  state.segments.forEach(function(seg, i) {
+    const plannedStartMin = cumStart;
+    cumStart += seg.duration;
+    const row = document.createElement('div');
+    row.className = 'agenda-row' + (i === state.currentIndex ? ' current' : '') + (state.finished[i] ? ' done' : '');
+    let icon = String.fromCodePoint(9203);
+    if (state.finished[i]) icon = String.fromCodePoint(10003);
+    else if (i === state.currentIndex) icon = String.fromCodePoint(9654);
+    row.innerHTML = '<div><span class="status-icon">' + icon + '</span><span class="name">' + seg.name + '</span></div>' +
+      '<div class="meta">' + seg.duration + ' min - desde el min ' + plannedStartMin + ' del plan</div>';
+    row.onclick = function(){ setCurrentSegment(i); };
+    container.appendChild(row);
+  });
+}
+
+function endMeeting() {
+  if (window._timerInterval) clearInterval(window._timerInterval);
+  document.getElementById('liveView').style.display = 'none';
+  document.getElementById('setupView').style.display = 'block';
+}
+
+function resetAll() {
+  localStorage.removeItem(STORAGE_KEY);
+  localStorage.removeItem(STORAGE_KEY + '_template');
+  location.reload();
+}
+
+(function init() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    state = JSON.parse(saved);
+    document.getElementById('setupView').style.display = 'none';
+    document.getElementById('liveView').style.display = 'block';
+    document.getElementById('liveMeetingName').textContent = state.meetingName;
+    document.getElementById('liveStartTime').textContent = state.startTimeLabel || '';
+    renderAgendaList();
+    tick();
+    window._timerInterval = setInterval(tick, 1000);
+  } else {
+    loadSetupDefaults();
+  }
+})();
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Control de tiempo de reunión</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7815039953852622"
+     crossorigin="anonymous"></script>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f0f0f2;
+    color: #1a1a1a;
+  }
+
   /* ---------- LAYOUT CON BANNERS ---------- */
   .page-wrap {
     max-width: 1200px;
